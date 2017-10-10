@@ -353,7 +353,7 @@ public class Capture extends CordovaPlugin {
 
 				if(Build.VERSION.SDK_INT > 7){
 					if (req.cameraface == 1) intent.putExtra("android.intent.extras.CAMERA_FACING", 1); //custom
-					intent.putExtra("android.intent.extra.durationLimit", req.duration);
+					intent.putExtra("android.intent.extra.durationLimit", req.duration / 1000);
 					intent.putExtra("android.intent.extra.videoQuality", req.quality);
 				}
 				this.cordova.startActivityForResult((CordovaPlugin) this, intent, req.requestCode);
