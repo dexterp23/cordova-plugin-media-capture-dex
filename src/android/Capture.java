@@ -532,6 +532,9 @@ public class Capture extends CordovaPlugin {
 		
 		File fp;
 		
+		mytoast = Toast.makeText(cordova.getActivity(), String.valueOf(data), Toast.LENGTH_LONG);
+		mytoast.show();
+		
 		//custom
 		if (countdownchk == 1) {
 			fp = new File(String.valueOf (data));
