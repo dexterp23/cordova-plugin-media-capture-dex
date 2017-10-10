@@ -224,7 +224,7 @@ public class Capture extends CordovaPlugin {
         try {
             player.setDataSource(filePath);
             player.prepare();
-            obj.put("duration", player.getDuration() / 1000);
+            obj.put("duration", player.getDuration());
             if (video) {
                 obj.put("height", player.getVideoHeight());
                 obj.put("width", player.getVideoWidth());
@@ -340,9 +340,9 @@ public class Capture extends CordovaPlugin {
 				
 				countdownchk = 1;
 				Intent intent = new Intent(cordova.getActivity(), VideoCamera.class);
-				intent.putExtra("SetDuration", Integer.valueOf ((int)(req.duration * 1000)));
+				intent.putExtra("SetDuration", Integer.valueOf ((int)(req.duration)));
         		intent.putExtra("CameraFace", Integer.valueOf (req.cameraface));	
-				intent.putExtra("AudioStart", Integer.valueOf ((int)(req.audio_start * 1000)));
+				intent.putExtra("AudioStart", Integer.valueOf ((int)(req.audio_start)));
 				intent.putExtra("AudioURL", req.audio_path);
 				this.cordova.startActivityForResult((CordovaPlugin) this, intent, req.requestCode);
 				
@@ -580,7 +580,7 @@ public class Capture extends CordovaPlugin {
 			e.printStackTrace();
 		}
 		String time = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-		Float video_duration = Float.parseFloat(time) / 1000;
+		Float video_duration = Float.parseFloat(time);
 		//Log.i(TAG, String.valueOf("video duration: " + video_duration));
 			
         try {
