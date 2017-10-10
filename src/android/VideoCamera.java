@@ -260,7 +260,7 @@ public class VideoCamera extends Activity {
 		
 		if (mIsRecordingVideo && deley_chk==0) {
 			deley_chk = 5000 - millisUntilFinished;
-			Log.i(TAG, String.valueOf("deley_chk 1: " + deley_chk));
+			//Log.i(TAG, String.valueOf("deley_chk 1: " + deley_chk));
 		}
 	
 	}
